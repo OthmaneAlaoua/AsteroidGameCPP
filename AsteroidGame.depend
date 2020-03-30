@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1585599880 source:d:\github\asteroidgame\main.cpp
+	<SFML/Graphics.hpp>
+	<iostream>
+	"include/Vaisseau.h"
+	"Asteroid.h"
+
+1585514977 d:\github\asteroidgame\include\vaisseau.h
+	<SFML/Graphics.hpp>
+	"Vecteur.h"
+	"Coordonnees.h"
+
+1585083901 d:\github\asteroidgame\include\vecteur.h
+
+1585592008 d:\github\asteroidgame\include\coordonnees.h
+	"Vecteur.h"
+
+1585593046 source:d:\github\asteroidgame\src\vaisseau.cpp
+	"../include/Vaisseau.h"
+	<iostream>
+
+1585083901 source:d:\github\asteroidgame\src\vecteur.cpp
+	"Vecteur.h"
+	<cmath>
+
+1585598824 source:d:\github\asteroidgame\src\coordonnees.cpp
+	"Coordonnees.h"
+	<iostream>
+
+1585599538 source:d:\github\asteroidgame\src\asteroid.cpp
+	"Asteroid.h"
+	<iostream>
+
+1585600286 d:\github\asteroidgame\include\asteroid.h
+	<SFML/Graphics.hpp>
+	"Vecteur.h"
+	"Coordonnees.h"
+
