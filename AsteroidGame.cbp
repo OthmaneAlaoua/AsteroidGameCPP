@@ -37,11 +37,13 @@
 		<ResourceCompiler>
 			<Add directory="D:/Github/AsteroidGame/include" />
 		</ResourceCompiler>
+		<Unit filename="include/AbstractEntity.h" />
 		<Unit filename="include/Asteroid.h" />
 		<Unit filename="include/Coordonnees.h" />
 		<Unit filename="include/Vaisseau.h" />
 		<Unit filename="include/Vecteur.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AbstractEntity.cpp" />
 		<Unit filename="src/Asteroid.cpp" />
 		<Unit filename="src/Coordonnees.cpp" />
 		<Unit filename="src/Vaisseau.cpp" />

@@ -20,7 +20,7 @@ class Coordonnees
        inline float getY() const {return y;};
 
        void operator+=(Vecteur const& vecteur);
-       float calculerDistance(Coordonnees const& autre) const;
+       float calculerDistance(Coordonnees const& other) const;
 
 
     private:

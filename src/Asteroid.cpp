@@ -1,37 +1,35 @@
 #include "Asteroid.h"
 #include <iostream>
+#include <random>
+#include <chrono>
 
-Asteroid::Asteroid()
+Asteroid::Asteroid(): AbstractEntity{"ressources/asteroid.png"} // enfaite j'ajout ca pour que avant de construire l'asteroid il construit la mere avec la bonne image
 {
-      if(!texture.loadFromFile("ressources/asteroid.png")){
-        std::cerr << "L'image de l'asteroid n'as pas été chargé" << std::endl;
-    }
-    sprite.setTexture(texture);
-    /**On fait un set origine pour definir origine du sprite en generale de base c en haut a gauche **/
-    sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
-    /**On va aussi definir d'ou il vas commencer **/
-    //BF MODIFsprite.setPosition(50,50);
-    sprite.setPosition(position.getX(),position.getY()); //On lui envoi le vecteur calculer dans la class coordonnees.
-    speed = {100,20};
+    /** Random number distribution that produces floating-point values according to a uniform distribution **/
+
+    /** random_device is a uniformly-distributed integer random number generator that produces non-deterministic random numbers. **/
+    //auto generateur = static_cast<float>(rand() % 100);//std::random_device{};
+    //std::random_device generateur;
+    //std::default_random_engine generateur;
+    //auto generateur = std::random_device{};
+    /** Hello **/
+    auto temps = std::chrono::high_resolution_clock::now().time_since_epoch();
+    auto ns = std::chrono::duration_cast<std::chrono::nanoseconds>(temps).count();
+    auto generateur = std::mt19937{static_cast<unsigned long>(ns)};
+
+    auto distributionPosition = std::uniform_real_distribution<float>{-150,150};
+    auto distributionSpeed = std::uniform_real_distribution<float>{80,120};
+    auto distributionAngle = std::uniform_real_distribution<float>{0,360};
+    auto distributionRotateSpeed = std::uniform_real_distribution<float>{10,30};
+    position = {distributionPosition(generateur), distributionPosition(generateur)};
+
+    /**Enfaite je le met la psk on herite de abstract mais il faut definir une vitesse comme c pas la memepour toute les class on la def dans le construct **/
+    //speed = {100,20};
+    speed = Vecteur::createFromAngle(distributionSpeed(generateur),distributionAngle(generateur));
+
+    /** On ajoute un truc pour faire tourner les asteroid il sert a rien mais sa fait bien  **/
+    rotateSpeed =  distributionRotateSpeed(generateur);
 }
 
-void Asteroid::afficher(sf::RenderWindow &window) const{
-    window.draw(sprite);
-}
 
 
-/**Le but de cette methode est de mettre a jour la position du vaiseau avec cette methode on va appler spride move **/
-void Asteroid::update(float time){
-    // Cette partie la je l'ai reprise du vaisseau mais on la supprime pas, peut etre on va ajouté des vitesse diffente aux sprite(avoir des asterid plus rapide jcp ...)
-    /*if(isSpeedUp){
-         //speed += {SPEEDUP *time,0}; on peux pas tourné
-         /// En faisant cela on peut aller dans toutes les direction car y est definie avec l'angle du sprite//
-         speed += Vecteur::createFromAngle(SPEEDUP*time, sprite.getRotation());
-    } */
-    /** move est une variable temps spreite.move accepte seuelemnt 2 float donc je cree une variable pour la mettre dedeant**/
-    auto moving = speed*time;
-    //BF MODsprite.move(moving.x,moving.y);
-    position  += moving;
-    sprite.setPosition(position.getX(), position.getY());
-
-};

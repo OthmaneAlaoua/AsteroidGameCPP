@@ -1,5 +1,7 @@
 #include "Coordonnees.h"
 #include <iostream>
+#include <cmath>
+#include <algorithm>
 
 int Coordonnees::longueurEspace{0};
 int Coordonnees::hauteurEspace{0};
@@ -45,4 +47,10 @@ void Coordonnees::recalculer(){
     }
 }
 
+/**Kader Look ca stp **/
 
+float Coordonnees::calculerDistance(Coordonnees const& other)const {
+    /** ce truc juste pour sauvegarder et savoir la distance en tre les deux element donc on use un vecteur **/
+    auto delta = Vecteur{std::min({abs(x-other.x),abs(x-other.x-longueurEspace),abs(x-other.x+longueurEspace)}), std::min({abs(y-other.y), abs(y-other.y-hauteurEspace), abs(y-other.y+hauteurEspace)})};
+    return sqrt(delta.x*delta.x+delta.y*delta.y);
+}
