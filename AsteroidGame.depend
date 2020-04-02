@@ -49,3 +49,53 @@
 	"AbstractEntity.h"
 	<iostream>
 
+1585845234 source:d:\github\asteroidgamecpp\main.cpp
+	<SFML/Graphics.hpp>
+	<iostream>
+	"include/Vaisseau.h"
+	"Asteroid.h"
+
+1585845282 d:\github\asteroidgamecpp\include\vaisseau.h
+	<SFML/Graphics.hpp>
+	"Vecteur.h"
+	"Coordonnees.h"
+	"AbstractEntity.h"
+
+1585083901 d:\github\asteroidgamecpp\include\vecteur.h
+
+1585841614 d:\github\asteroidgamecpp\include\coordonnees.h
+	"Vecteur.h"
+
+1585846048 d:\github\asteroidgamecpp\include\abstractentity.h
+	<SFML/Graphics.hpp>
+	"Vecteur.h"
+	"Coordonnees.h"
+
+1585846023 d:\github\asteroidgamecpp\include\asteroid.h
+	"AbstractEntity.h"
+	<iostream>
+
+1585845604 source:d:\github\asteroidgamecpp\src\abstractentity.cpp
+	"AbstractEntity.h"
+	<iostream>
+
+1585840442 source:d:\github\asteroidgamecpp\src\asteroid.cpp
+	"Asteroid.h"
+	<iostream>
+	<random>
+	<chrono>
+
+1585842283 source:d:\github\asteroidgamecpp\src\coordonnees.cpp
+	"Coordonnees.h"
+	<iostream>
+	<cmath>
+	<algorithm>
+
+1585845246 source:d:\github\asteroidgamecpp\src\vaisseau.cpp
+	"../include/Vaisseau.h"
+	<iostream>
+
+1585083901 source:d:\github\asteroidgamecpp\src\vecteur.cpp
+	"Vecteur.h"
+	<cmath>
+
